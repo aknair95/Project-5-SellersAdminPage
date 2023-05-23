@@ -1,4 +1,5 @@
 import Card from "../UI/card";
+import CategoryListing from "./categoryListing";
 import "./productList.css";
 
 const ProductList=(props) =>{
@@ -10,13 +11,9 @@ const ProductList=(props) =>{
             {
             props.productList.map((item) =>{
                 if(item.Category==="Electronics")
-                 {   return (
-                        <div>
-                            <ul>
-                                <li key={item.ID}>{`Name: ${item.Name} Price: ${item.Price} Category: ${item.Category}`}</li>
-                            </ul>
-                        </div>
-                        )}
+                 {   
+                    return <CategoryListing productData={item}/>
+                 }
                 return;
                 })
             }
@@ -24,13 +21,9 @@ const ProductList=(props) =>{
             {
             props.productList.map((item) =>{
                 if(item.Category==="Food")
-                 {   return (
-                        <div>
-                            <ul>
-                                <li key={item.ID}>{`Name: ${item.Name} Price: ${item.Price} Category: ${item.Category}`}</li>
-                            </ul>
-                        </div>
-                        )}
+                 {   
+                    return <CategoryListing productData={item}/>
+                 }
                 return;
                 })
             }
@@ -38,13 +31,9 @@ const ProductList=(props) =>{
             {
             props.productList.map((item) =>{
                 if(item.Category==="Skincare")
-                 {   return (
-                        <div>
-                            <ul>
-                                <li key={item.ID}>{`Name: ${item.Name} Price: ${item.Price} Category: ${item.Category}`}</li>
-                            </ul>
-                        </div>
-                        )}
+                 {   
+                    return <CategoryListing productData={item}/>
+                 }
                 return;
                 })
             }
