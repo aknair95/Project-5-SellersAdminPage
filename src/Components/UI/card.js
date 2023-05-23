@@ -1,8 +1,8 @@
-import card from "./card.css";
+import "./card.css";
 
 const Card=(props) =>{
     return(
-        <React.Fragment>{props.children}</React.Fragment>
+        <div className="card">{props.children}</div>
     )
 }
 

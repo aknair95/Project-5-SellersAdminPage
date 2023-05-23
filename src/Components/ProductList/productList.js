@@ -1,23 +1,54 @@
+import Card from "../UI/card";
 import "./productList.css";
-import React from "react";
 
-const ProductList=() =>{
+const ProductList=(props) =>{
+    const categoryList=["Electronics","Food","Skincare"];
     return (
-        <React.Fragment>
+        <Card>
             <h1>PRODUCTS</h1>
             <h2>Electronic Items</h2>
+            {
+            props.productList.map((item) =>{
+                if(item.Category==="Electronics")
+                 {   return (
+                        <div>
+                            <ul>
+                                <li key={item.ID}>{`Name: ${item.Name} Price: ${item.Price} Category: ${item.Category}`}</li>
+                            </ul>
+                        </div>
+                        )}
+                return;
+                })
+            }
             <h2>Food Items</h2>
+            {
+            props.productList.map((item) =>{
+                if(item.Category==="Food")
+                 {   return (
+                        <div>
+                            <ul>
+                                <li key={item.ID}>{`Name: ${item.Name} Price: ${item.Price} Category: ${item.Category}`}</li>
+                            </ul>
+                        </div>
+                        )}
+                return;
+                })
+            }
             <h2>Skincare Items</h2>
-            <h2>Cosmetics Items</h2>
-            <h2>Toys Items</h2>
-            <h2>Electrical Items</h2>
-            <h2>Decoration Items</h2>
-            <h2>Tool Items</h2>
-            <h2>Miscellaneous Items</h2>
-            <h2>Kitchen Items</h2>
-            <h2>Healthcare Items</h2>
-            <h2>Furniture Items</h2> 
-        </React.Fragment>
+            {
+            props.productList.map((item) =>{
+                if(item.Category==="Skincare")
+                 {   return (
+                        <div>
+                            <ul>
+                                <li key={item.ID}>{`Name: ${item.Name} Price: ${item.Price} Category: ${item.Category}`}</li>
+                            </ul>
+                        </div>
+                        )}
+                return;
+                })
+            }
+        </Card>
     )
 }
 
