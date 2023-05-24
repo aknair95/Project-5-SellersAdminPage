@@ -9,9 +9,14 @@ function App() {
 
   useEffect(() =>{
     const keys=Object.keys(localStorage);
+    let storedProductList=[];
     for(let i=0;i<keys.length;i++){
-      productList[i]=localStorage.getItem(keys[i]);
+      storedProductList=[...storedProductList,JSON.parse(localStorage.getItem(keys[i]))];
     }
+    console.log(storedProductList);
+    setProductList(() =>{
+      return storedProductList;
+    })
   },[]);
 
   const onProductDataHandler=(newProductData) =>{
@@ -24,7 +29,9 @@ function App() {
   const deleteBtnHandler=(btnID) =>{
     localStorage.removeItem(btnID);
     setProductList((prevProductList) =>{
-        const updatedProductData=prevProductList.filter((item) =>{item.ID !== btnID});
+        const updatedProductData=prevProductList.filter((item) =>{
+          return item.ID!==btnID;
+        });
         return updatedProductData;
     })}
 

@@ -6,7 +6,7 @@ const CategoryListing=(props) =>{
     }
     return (
         <Card>
-            <ul>
+            <ul key={props.productData.Category}>
                 <li key={props.productData.ID}>
                 {`Name: ${props.productData.Name} Price: ${props.productData.Price} Category: ${props.productData.Category}`}
                 <button onClick={deleteBtnHandler} id={props.productData.ID}>Delete</button>
