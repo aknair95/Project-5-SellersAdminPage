@@ -3,7 +3,6 @@ import CategoryListing from "./categoryListing";
 import "./productList.css";
 
 const ProductList=(props) =>{
-    const categoryList=["Electronics","Food","Skincare"];
     return (
         <Card>
             <h1>PRODUCTS</h1>
@@ -12,7 +11,7 @@ const ProductList=(props) =>{
             props.productList.map((item) =>{
                 if(item.Category==="Electronics")
                  {   
-                    return <CategoryListing productData={item}/>
+                    return <CategoryListing productData={item} deleteBtnHandler={props.deleteBtnHandler}/>
                  }
                 return;
                 })
@@ -22,7 +21,7 @@ const ProductList=(props) =>{
             props.productList.map((item) =>{
                 if(item.Category==="Food")
                  {   
-                    return <CategoryListing productData={item}/>
+                    return <CategoryListing productData={item} deleteBtnHandler={props.deleteBtnHandler}/>
                  }
                 return;
                 })
@@ -32,7 +31,7 @@ const ProductList=(props) =>{
             props.productList.map((item) =>{
                 if(item.Category==="Skincare")
                  {   
-                    return <CategoryListing productData={item}/>
+                    return <CategoryListing productData={item} deleteBtnHandler={props.deleteBtnHandler}/>
                  }
                 return;
                 })
